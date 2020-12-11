@@ -8,9 +8,11 @@ app.use(express.static('public'))
 io.on('connection', (socket) => {
   socket.on('disconnect', () => {
     console.log('A user has disconnected')
+    socket.broadcast.emit('user::disconnect', 'A user has disconnected!')
   })
+  
   socket.on('chat message', (msg) => {
-    io.emit('chat message', msg)
+    socket.broadcast.emit('chat message', msg)
   })
 })
 
