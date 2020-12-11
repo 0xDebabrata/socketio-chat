@@ -15,6 +15,6 @@ socket.on('chat message', (msg) => {
   list.appendChild(li)
 })
 
-socket.on('disconnect', msg => {
+socket.on('user::disconnect', msg => {
   alert(msg)
 })
