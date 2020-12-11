@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Socket.IO chat</title>
+    <title>Chatty</title>
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body { font: 13px Helvetica, Arial; }
@@ -12,13 +12,18 @@
       #messages li { padding: 5px 10px; }
       #messages li:nth-child(odd) { background: #eee; }
     </style>
+    <script defer src="/socket.io/socket.io.js"></script>
+    <script defer src="app.js"></script>
   </head>
   <body>
-    <ul id="messages"></ul>
+    <ul id="messages">
+
+    </ul>
     <form id="form" action="" onsubmit="emit(event)">
-      <input id="m" autocomplete="off" /><input type='submit' placeholder="send">
+      <input id="m" autocomplete="off" />
+      <input type='submit' placeholder="send">
     </form>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="app.js"></script>
+    <!-- <script src="/socket.io/socket.io.js"></script> -->
+    
   </body>
 </html>
