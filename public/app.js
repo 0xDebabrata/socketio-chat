@@ -5,7 +5,6 @@ let list = document.getElementById('messages')
 let emit = event => {
   event.preventDefault()
   socket.emit('chat message', message.value);
-  console.log('emitted')
   message.value = ''
   return false
 }

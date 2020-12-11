@@ -1,14 +1,13 @@
-let app = require('express')();
+let express = require('express');
+let app = express();
 let http = require('http').createServer(app);
 let io = require('socket.io')(http);
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html')
-})
+app.use(express.static('public'))
 
 io.on('connection', (socket) => {
   socket.on('disconnect', () => {
-    io.emit('disconnect', 'A user has disconnected')
+    console.log('A user has disconnected')
   })
   socket.on('chat message', (msg) => {
     io.emit('chat message', msg)
