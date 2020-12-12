@@ -13,6 +13,7 @@ let emit = event => {
 // Display chat messages
 socket.on('chat message', (msg) => {
   let li = document.createElement('li')
+  li.setAttribute('class', 'msg')
   li.innerHTML = msg
   list.appendChild(li)
 })
