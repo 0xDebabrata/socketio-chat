@@ -35,6 +35,7 @@ socket.on('welcome', msg => {
 })
 
 let displayChat = msg => {
+  
   let li = document.createElement('li')
   let p = document.createElement('p')
   let span = document.createElement('span')
