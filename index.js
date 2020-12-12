@@ -8,10 +8,7 @@ app.use(express.static('public'))
 io.on('connection', (socket) => {
 
   // Broadcast when user joins chat
-  socket.on('connect', () => {
-    msg = 'User has entered the chat'
-    socket.broadcast.emit('welcome', msg)
-  })
+  socket.broadcast.emit('welcome', 'New user has entered the chat')
 
   // Broadcast when a user disconnects
   socket.on('disconnect', () => {
