@@ -24,8 +24,21 @@ form {
 }
 
 #messages { list-style-type: none; margin: 0; padding: 0; }
-#messages li { padding: 5px 10px; }
+#messages li { 
+  padding: 5px 10px; 
+  font-size: 16px;
+}
+
 .msg:nth-child(odd) { background: #eee; }
+
+.self {
+  text-align: right;
+}
+
+.time {
+  font-size: 12px;
+  color: grey;
+}
 
 .welcome {
   background-color: aqua;
