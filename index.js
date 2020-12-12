@@ -7,15 +7,14 @@ app.use(express.static('public'))
 
 io.on('connection', (socket) => {
   socket.on('disconnect', () => {
-    console.log('A user has disconnected')
-    socket.broadcast.emit('user::disconnect', 'A user has disconnected!')
+    msg = socket.id + ' has disconnected'
+    socket.broadcast.emit('user::disconnect', msg)
   })
   
   socket.on('chat message', (msg) => {
     socket.broadcast.emit('chat message', msg)
   })
 })
-
 
 http.listen(3000, () => {
   console.log('App listening on port 3000')
