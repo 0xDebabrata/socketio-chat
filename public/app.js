@@ -19,6 +19,8 @@ let emit = event => {
 // Display chat messages
 socket.on('chat message', (msg) => {
   displayChat(msg)
+  
+  window.scrollTo(0, document.body.scrollHeight)
 })
 
 // User disconnect alert
